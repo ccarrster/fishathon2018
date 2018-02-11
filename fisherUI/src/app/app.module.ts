@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {NgxMapboxGLModule}  from 'ngx-mapbox-gl';
 
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -22,6 +23,7 @@ style: 'mapbox://styles/mapbox/streets-v10'
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgxMapboxGLModule.forRoot({
           accessToken:
           'pk.eyJ1IjoiYWxleG1hY2tpbm5vbiIsImEiOiJjamRodHpybnkxMmQwMndwN3dqbm5hOWFvIn0.fvoLHQpY-Eqzx6V851jirQ'
