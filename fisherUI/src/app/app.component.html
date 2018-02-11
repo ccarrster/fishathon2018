@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+
+  <mgl-map
+    [style]="'mapbox://styles/mapbox/streets-v9'"
+    [zoom]="[10]"
+    [center]="[ geopoints[index].lat, geopoints[index].long]"
+  ></mgl-map>
+
+
+  <select name="persons" title="title" (change)="updatePoint($event.target.value)">
+
+    <option *ngFor="let point of geopoints"
+            [value]="point.name"
+           >
+      {{point.name}}
+    </option>
+
+  </select>
+
+
+</div>
+
