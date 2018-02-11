@@ -9,6 +9,7 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent implements OnInit {
   title = 'app';
   public index = 0;
+  public baseRef: string = "https://canifish.co";
   public geopoints: Array<any> = [
     {
       index: 0,
@@ -40,7 +41,7 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getData(geopoint);
+    this.getData(this.geopoint);
   }
 
   updatePoint(person) {
@@ -63,8 +64,7 @@ export class AppComponent implements OnInit {
 
   getData(value) {
     //['Browser', 'Operating Systems', 'Language', 'Cities'];
-    value = value.replace(/ /, '');
-    let url = this.baseherf + value + 'Data';
+    let url = this.baseRef + value + 'Data';
     this.http.get(url)
       .subscribe(
         (data: any[]) => {
