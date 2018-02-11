@@ -22,6 +22,16 @@
 
   </select>
 
+  <select name="fish" title="fish" (change)="updateFish($event.target.value)">
+
+      <option *ngFor="let fish of fishlist"
+              [value]="fish"
+             >
+        {{fish}}
+      </option>
+
+    </select>
+
 
 </div>
 
